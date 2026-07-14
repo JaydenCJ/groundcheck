@@ -9,7 +9,7 @@ description = "Verifies that quotes and claims in generated output actually appe
 readme = "README.md"
 requires-python = ">=3.9"
 license = { text = "MIT" }
-authors = [{ name = "JaydenCJ" }]
+authors = [{ name = "JaydenCJ", email = "aisingioro.kiyon@gmail.com" }]
 keywords = ["rag", "hallucination", "grounding", "citations", "fact-checking", "llm", "ci", "evaluation"]
 classifiers = [
     "Development Status :: 3 - Alpha",
