@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="596" viewBox="0 0 1000 596" font-family="Menlo, Consolas, 'DejaVu Sans Mono', monospace" font-size="12">
+  <!-- Terminal transcript of two real runs:
+       `groundcheck check examples/answer.md --context examples/sources`
+       `groundcheck check --bundle examples/bundle.json && echo grounded`
+       Every line of text is copied verbatim from an actual execution. -->
+  <rect width="1000" height="596" rx="10" fill="#0d1117"/>
+  <rect width="1000" height="34" rx="10" fill="#161b22"/>
+  <rect y="20" width="1000" height="14" fill="#161b22"/>
+  <circle cx="22" cy="17" r="6" fill="#ff5f57"/>
+  <circle cx="42" cy="17" r="6" fill="#febc2e"/>
+  <circle cx="62" cy="17" r="6" fill="#28c840"/>
+  <text x="500" y="22" fill="#8b949e" text-anchor="middle" font-size="12">groundcheck — every quote and claim, checked against the context</text>
+  <g fill="#c9d1d9" xml:space="preserve">
+    <text x="20" y="62"><tspan fill="#7ee787">$</tspan> groundcheck check examples/answer.md --context examples/sources</text>
+    <text x="20" y="83">examples/answer.md — 5 spans checked against 2 sources (design, pricing)</text>
+    <text x="20" y="125">  <tspan fill="#7ee787">SUPPORTED  </tspan>  quote  L1   "Reads are served from a write-through cache in front of the primary sto…"</text>
+    <text x="20" y="146">  <tspan fill="#7ee787">SUPPORTED  </tspan>  claim  L4   Cache entries expire after 300 seconds and a background sweeper enforce…</text>
+    <text x="20" y="167">  <tspan fill="#d29922">MISCITED   </tspan>  quote  L7   "Invoices are generated on the first business day of each month"</text>
+    <text x="20" y="188" fill="#8b949e">                        cited [1] but the verbatim match is in pricing</text>
+    <text x="20" y="209" fill="#8b949e">                        evidence [pricing]: Invoices are generated on the first business day of each month</text>
+    <text x="20" y="230">  <tspan fill="#d29922">PARTIAL    </tspan>  claim  L10  The cache absorbed 97% of read traffic during the 2025 load test.</text>
+    <text x="20" y="251" fill="#8b949e">                        words align with design (score 0.76) but the figure(s) <tspan fill="#f85149">97%</tspan> appear nowhere near the evidence</text>
+    <text x="20" y="272" fill="#8b949e">                        evidence [design]: 2025 load test the cache absorbed <tspan fill="#7ee787">92%</tspan> of read traffic at the p99 latency target of 12 ms</text>
+    <text x="20" y="293">  <tspan fill="#f85149">UNSUPPORTED</tspan>  claim  L12  Enterprise revenue grew 40% year over year thanks to the new rebate pro…</text>
+    <text x="20" y="314" fill="#8b949e">                        best window in pricing scores only 0.09; missing: revenue, grew, 40%, year, … (+4)</text>
+    <text x="20" y="356">2 supported, 1 partial, <tspan fill="#d29922">1 miscited</tspan>, <tspan fill="#f85149">1 unsupported</tspan> — support 40%</text>
+    <text x="20" y="377" fill="#f85149">exit 1 (fail-on unsupported)</text>
+    <text x="20" y="419"><tspan fill="#7ee787">$</tspan> groundcheck check --bundle examples/bundle.json &amp;&amp; echo grounded</text>
+    <text x="20" y="440">examples/bundle.json — 2 spans checked against 1 source (logs)</text>
+    <text x="20" y="482">  <tspan fill="#7ee787">SUPPORTED  </tspan>  claim  L1   Access logs are retained for 30 days and then deleted by a scheduled jo…</text>
+    <text x="20" y="503">  <tspan fill="#7ee787">SUPPORTED  </tspan>  claim  L3   All access logs are encrypted at rest with keys rotated every 90 days.</text>
+    <text x="20" y="545">2 supported, 0 partial, 0 miscited, 0 unsupported — support 100%</text>
+    <text x="20" y="566" fill="#7ee787">grounded</text>
+  </g>
+</svg>
